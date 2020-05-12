@@ -16,7 +16,7 @@ plt.ylabel('Vout')
 plt.title('Output from Oscillator')
 
 #if using termux
-plt.savefig('./figs/ee18btech11044/ee18btech11044_3_1.pdf')
-plt.savefig('./figs/ee18btech11044/ee18btech11044_3_1.eps')
-subprocess.run(shlex.split("termux-open ./figs/ee18btech11044_3_1.pdf"))
+plt.savefig('./figs/ee18btech11044/ee18btech11044_3_2.pdf')
+plt.savefig('./figs/ee18btech11044/ee18btech11044_3_2.eps')
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11044_3_2.pdf"))
 #plt.show()
