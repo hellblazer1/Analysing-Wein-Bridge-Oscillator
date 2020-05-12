@@ -103,12 +103,12 @@ Compare the equations \ref{eq:ee18btech11044_3_2} and \ref{eq:ee18btech11044_3_3
 \solution
 \begin{align}
     \omega_0^2 = \frac{1}{R^2C^2} \\
-    \omega_0 = \frac{1}{RC}
+    \omega_0 = \frac{1}{RC} \label{eq:ee18btech11044_3_4} \\
     \frac{\omega_0}{Q} = \frac{1}{RC}(2 - \frac{R_2}{R_1}) \\
-    Q = \frac{1}{(2 - \frac{R_2}{R_1})} \label{eq:ee18btech11044_3_4} \\
+    Q = \frac{1}{(2 - \frac{R_2}{R_1})} \label{eq:ee18btech11044_3_5} \\
 \end{align}
 \item 
-Using Eq \ref{eq:ee18btech11044_3_4} calculate the value of $\frac{R_2}{R_1}$ for which poles lie on right hand of s-plane.
+Using Eq \ref{eq:ee18btech11044_3_5} calculate the value of $\frac{R_2}{R_1}$ for which poles lie on right hand of s-plane.
 
 \solution 
 
@@ -164,7 +164,54 @@ codes/ee18btech11044_spice.py
 \caption{}
 \end{figure}
 
+\item Tabulate the values of Resistors and Capacitors you have chosen for the simulation.
 
+\solution
 
+\begin{table}[!ht]
+\centering
+\input{./tables/ee18btech11044_3_t_1.tex}
+\caption{}
+\label{table:ee18btech11044_t_1}
+\end{table}
 
+Where, according to Fig \ref{fig:ee18btech11044_3_tikz_1}
+\begin{align}
+    R_p = R_s = R \\
+    C_p = C_s = C
+\end{align}
+ 
+ \item Calculate the frequency of sinusoidal generated for the combination of R and C chosen using Eq \ref{eq:ee18btech11044_3_4}
+ 
+ \solution
+ 
+ Frequency generated is given by 
+ 
+ \begin{align}
+     \omega_{0} = \frac{1}{ R C} \\
+     \omega_{0} = 6250 rad/sec \\
+     f_{0} = 995.22Hz.
+ \end{align}
+ 
+ \item Calculate the frequency of sinusoidal wave using plot generated from simulation.
+ 
+ \solution
+ \begin{itemize}
+     \item Consider a part of plot generated from simulation shown in the Fig \ref{fig:ee18btech11044_3_plot_3}.
+     \item Calculating the Time-period of the sinusoidal wave generated using the two points marked in the Fig \ref{fig:ee18btech11044_3_plot_3}.
+     \begin{align}
+         T_0 = 0.0856452 - 0.0846361 \\
+         f_0 = 1/T_0 \\
+         f_0 = 990.98Hz.
+     \end{align}
+     \item We get the frequencies calculated from the formulae and the plot to be approximately same.
+ \end{itemize}
+ 
+ 
+ \begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044_3_3.eps}
+\caption{}
+\label{fig:ee18btech11044_3_plot_3}
+\end{figure}
 \end{enumerate}
