@@ -12,6 +12,6 @@ R4 Vout N004 20300
 .include LM741.MOD
 .control
 run
-plot V(Vout)
+*plot V(Vout)
 .end
 
