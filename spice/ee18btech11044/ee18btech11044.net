@@ -13,5 +13,6 @@ R4 Vout N004 20300
 .control
 run
 *plot V(Vout)
+wrdata ee18btech11044.dat V(Vout)
 .end
 
