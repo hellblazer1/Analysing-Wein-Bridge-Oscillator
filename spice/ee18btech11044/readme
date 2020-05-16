@@ -3,3 +3,4 @@ This section contains all the files that have been generated and used in simulat
 2.Makesure you have LM741.MOD in the working directory
 3.Running the netlist will generate a ee18btech11044.dat file 
 6.Visualise this .dat file using a python script ee18btech11044_spice.py
+7.Run ee18btech11044_spice_2.py for generating a zoomed in plot to verify the frequency.
