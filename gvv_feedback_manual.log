@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.3)  16 MAY 2020 12:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.3.3)  16 MAY 2020 13:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1324,13 +1324,18 @@ ps>
 (epstopdf)                    size: 26804 bytes
 (epstopdf)             Output file: <./figs/ee18btech11044/ee18btech11044_3_1-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-16 12:39:01
-(epstopdf)                    size: 12500 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/ee18btech11044/ee18
 btech11044_3_1-eps-converted-to.pdf ./figs/ee18btech11044/ee18btech11044_3_1.ep
 s>
 (epstopdf)             \includegraphics on input line 142.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=./figs/ee18btech11044/ee18btech11044_3_1-eps-conv
+erted-to.pdf ./figs/ee18btech11044/ee18btech11044_3_1.eps)...executed safely (a
+llowed).
+
+Package epstopdf Info: Result file: <./figs/ee18btech11044/ee18btech11044_3_1-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2020-05-16 13:00:24
+(epstopdf)                    size: 12500 bytes.
 
 
 pdfTeX warning: pdflatex (file ./figs/ee18btech11044/ee18btech11044_3_1-eps-con
@@ -1351,13 +1356,18 @@ ps>
 (epstopdf)                    size: 40520 bytes
 (epstopdf)             Output file: <./figs/ee18btech11044/ee18btech11044_3_2-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-16 12:39:01
-(epstopdf)                    size: 19192 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/ee18btech11044/ee18
 btech11044_3_2-eps-converted-to.pdf ./figs/ee18btech11044/ee18btech11044_3_2.ep
 s>
 (epstopdf)             \includegraphics on input line 165.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=./figs/ee18btech11044/ee18btech11044_3_2-eps-conv
+erted-to.pdf ./figs/ee18btech11044/ee18btech11044_3_2.eps)...executed safely (a
+llowed).
+
+Package epstopdf Info: Result file: <./figs/ee18btech11044/ee18btech11044_3_2-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2020-05-16 13:00:24
+(epstopdf)                    size: 19192 bytes.
 
 
 pdfTeX warning: pdflatex (file ./figs/ee18btech11044/ee18btech11044_3_2-eps-con
@@ -1384,13 +1394,18 @@ ps>
 (epstopdf)                    size: 29622 bytes
 (epstopdf)             Output file: <./figs/ee18btech11044/ee18btech11044_3_3-e
 ps-converted-to.pdf>
-(epstopdf)                    date: 2020-05-16 12:39:01
-(epstopdf)                    size: 15511 bytes
 (epstopdf)             Command: <repstopdf --outfile=./figs/ee18btech11044/ee18
 btech11044_3_3-eps-converted-to.pdf ./figs/ee18btech11044/ee18btech11044_3_3.ep
 s>
 (epstopdf)             \includegraphics on input line 215.
-Package epstopdf Info: Output file is already uptodate.
+runsystem(repstopdf --outfile=./figs/ee18btech11044/ee18btech11044_3_3-eps-conv
+erted-to.pdf ./figs/ee18btech11044/ee18btech11044_3_3.eps)...executed safely (a
+llowed).
+
+Package epstopdf Info: Result file: <./figs/ee18btech11044/ee18btech11044_3_3-e
+ps-converted-to.pdf>
+(epstopdf)                    date: 2020-05-16 13:00:24
+(epstopdf)                    size: 15511 bytes.
 
 
 pdfTeX warning: pdflatex (file ./figs/ee18btech11044/ee18btech11044_3_3-eps-con
@@ -1433,7 +1448,7 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/txsya.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/urw/times/utmri8a.pfb>
-Output written on gvv_feedback_manual.pdf (3 pages, 100508 bytes).
+Output written on gvv_feedback_manual.pdf (3 pages, 100496 bytes).
 PDF statistics:
  245 PDF objects out of 1000 (max. 8388607)
  143 compressed objects within 2 object streams
