@@ -6,6 +6,10 @@ T = 0.0856452 - 0.0846361
 f = 1/T
 print(f)
 
+#if using termux
+import subprocess
+import shlex
+#end
 
 #Loading the data
 data = np.loadtxt( 'ee18btech11044.dat' )
@@ -20,4 +24,8 @@ plt.plot([0.08,0.09],[0,0],'r--',lw=1,label ='0V')
 plt.plot(0.0846361,0,'o')
 plt.plot(0.0856452,0,'o')
 plt.legend()
-plt.show()
+#if using termux
+plt.savefig('./figs/ee18btech11044/ee18btech11044_3_3.pdf')
+plt.savefig('./figs/ee18btech11044/ee18btech11044_3_3.eps')
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11044_3_3.pdf"))
+#plt.show()

@@ -1,5 +1,9 @@
-For the Wein-bridge oscillator of Fig \ref{fig:ee18btech11044_3_tikz_1}, use the expression for loop gain in  \eqref{eq:ee18btech11044_3_1}  to find the poles of the closed-loop system. Give the expression for the pole, Q and use it to show that to locate the poles in the right half of s plane, $\frac{R_2}{R_1}$ must be selected to be greater than 2. 
+\begin{enumerate}[label=\arabic*.,ref=\theenumi]
+%\begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
+\numberwithin{equation}{enumi}
 
+\item  For the Wein-bridge oscillator of Fig \ref{fig:ee18btech11044_3_tikz_1}, use the expression for loop gain to find the poles of the closed-loop system. Give the expression for the pole, Q and use it to show that to locate the poles in the right half of s plane, $\frac{R_2}{R_1}$ must be selected to be greater than 2. 
+\renewcommand{\thefigure}{\theenumi.\arabic{figure}}
 \begin{figure}[!hbt]
 	\begin{center}
 			\resizebox{\columnwidth}{!}{\input{./figs/ee18btech11044/ee18btech11044_3_tikz_1.tex}}
@@ -8,17 +12,13 @@ For the Wein-bridge oscillator of Fig \ref{fig:ee18btech11044_3_tikz_1}, use the
 \label{fig:ee18btech11044_3_tikz_1}
 \end{figure}
 
-\begin{enumerate}[label=\arabic*.,ref=\theenumi]
-%\begin{enumerate}[label=\thesubsection.\arabic*.,ref=\thesubsection.\theenumi]
-\numberwithin{equation}{enumi}
-\item
 
 
 \item Compare the basic structure for a sinusoidal oscillator with Wein-bridge oscillator and give expressions for G and H. 
 
 \solution
 \begin{itemize}
-    \item Comparring Fig \ref{fig:ee18btech11044_3_tikz_1} and Fig \ref{fig:ee18btech11044_3_tikz_2}, we get
+ Comparring Fig \ref{fig:ee18btech11044_3_tikz_1} and Fig \ref{fig:ee18btech11044_3_tikz_2}, we get
 \begin{align}
 G = 1+\frac{R_2}{R_1} \\
 H = \frac{Z_p}{Z_p + Z_s}
@@ -120,7 +120,7 @@ Verify the above calculations using a Python code.
 
 \solution
 \begin{lstlisting}
-codes/ee18btech11044_3_1.py
+codes/ee18btech11044/ee18btech11044_3_1.py
 \end{lstlisting}
 \begin{itemize}
     \item This figure shows how the location of poles vary if $\frac{R_2}{R_1}$ is varied for a fixed $\omega_0$.
@@ -133,6 +133,41 @@ codes/ee18btech11044_3_1.py
 \caption{}
 \end{figure}
 
+\item
+Verify the output of the above transfer using a python code
+
+\solution
+
+
+\begin{itemize}
+\item In the real life oscillator generates a sinusoidal input utilizing the thermal noise in the circuit.
+\item In the python simulation, oscillator requires an input to generate the output as there is no thermal noise in the simulation.
+\item Any input will produce the same sinusoidal output in the simulation as you can see output for both step input and impulse input is same(Amplitude might differ but frequency will be the same). 
+\item Please refer Fig{\ref{fig:ee18btech11044_3_4}} for the output of the transfer function for a step input.
+\item Please refer Fig{\ref{fig:ee18btech11044_3_5}} for the output of the transfer function for am impulse input.
+\item Code for generating step response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_pyst.py
+\end{lstlisting}
+\item Code for generating impulse response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_pyim.py
+\end{lstlisting}
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_4.eps}
+\caption{}
+\label{fig:ee18btech11044_3_4}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_5.eps}
+\caption{}
+\label{fig:ee18btech11044_3_5}
+\end{figure}
 
 \item Simulate the circuit shown in Fig \ref{fig:ee18btech11044_3_tikz_1} using spice simulators. Plot the output generated using python.
 
