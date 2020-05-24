@@ -20,8 +20,8 @@
 \begin{itemize}
  Comparring Fig \ref{fig:ee18btech11044_3_tikz_1} and Fig \ref{fig:ee18btech11044_3_tikz_2}, we get
 \begin{align}
-G = 1+\frac{R_2}{R_1} \\
-H = \frac{Z_p}{Z_p + Z_s}
+G = 1+\frac{R_2}{R_1} \label{eq:ee18btech11044_3_1}\\
+H = \frac{Z_p}{Z_p + Z_s}  \label{eq:ee18btech11044_3_2}
 \end{align}
 where,
 \begin{align}
@@ -41,6 +41,12 @@ where,
 \end{figure} 
 
 
+\item Write the closed loop Transfer function T(s) for wein-bridge oscillator.
+
+\solution
+\begin{align}
+T(s) = \frac{(1+\frac{R_2}{R_1}) R^2C^2s^2+3RCs+1 }{R^C^2s^2+(2-\frac{R_2}{R_1})RCs+1} \label{eq:ee18btech11044_3_7}
+\end{align}
 
 
 
@@ -56,7 +62,7 @@ where,
     3 - 1 +sRC +\frac{1}{sRC} -\frac{R_2}{R_1} = 0  \\
     2s + s^2 RC + \frac{1}{RC} -s\frac{R_2}{R_1} = 0  \\
     s^2 RC + s(2 - \frac{R_2}{R_1}) + \frac{1}{RC} =0 \\
-    s^2 + s \frac{1}{RC}(2-\frac{R_2}{R_1}) + \frac{1}{R^2C^2} = 0 \label{eq:ee18btech11044_3_2}
+    s^2 + s \frac{1}{RC}(2-\frac{R_2}{R_1}) + \frac{1}{R^2C^2} = 0 \label{eq:ee18btech11044_3_3}
 \end{align}
 
 \item
@@ -64,7 +70,7 @@ Write the general expression for the characteristic equation.
 
 \solution
 \begin{align}
-    s^2 + s\frac{\omega_0}{Q} + \omega_0^2 = 0 \label{eq:ee18btech11044_3_3}
+    s^2 + s\frac{\omega_0}{Q} + \omega_0^2 = 0 \label{eq:ee18btech11044_3_4}
 \end{align}
 
 \item State the \textbf{Barkhausen criterion} for sustained oscillations with frequency $\omega_0$.
@@ -81,6 +87,7 @@ Write the general expression for the characteristic equation.
 \item Give the definition of \textbf{Quality factor}(Q) and explain its significance.
 
 \solution
+
 \begin{itemize}
     \item It is a parameter of an oscillatory system expressing the relationship between stored energy and energy dissipation.
     \item The "purity" of output sine waves will be a function of the selectivity feedback network.
@@ -90,17 +97,17 @@ Write the general expression for the characteristic equation.
 
 
 \item 
-Compare the equations \ref{eq:ee18btech11044_3_2} and \ref{eq:ee18btech11044_3_3} and give expressions for Q and $\omega_0$
+Compare the equations \ref{eq:ee18btech11044_3_3} and \ref{eq:ee18btech11044_3_4} and give expressions for Q and $\omega_0$
 
 \solution
 \begin{align}
     \omega_0^2 = \frac{1}{R^2C^2} \\
-    \omega_0 = \frac{1}{RC} \label{eq:ee18btech11044_3_4} \\
+    \omega_0 = \frac{1}{RC} \label{eq:ee18btech11044_3_5} \\
     \frac{\omega_0}{Q} = \frac{1}{RC}(2 - \frac{R_2}{R_1}) \\
-    Q = \frac{1}{(2 - \frac{R_2}{R_1})} \label{eq:ee18btech11044_3_5} \\
+    Q = \frac{1}{(2 - \frac{R_2}{R_1})} \label{eq:ee18btech11044_3_6} \\
 \end{align}
 \item 
-Using Eq \ref{eq:ee18btech11044_3_5} calculate the value of $\frac{R_2}{R_1}$ for which poles lie on right hand of s-plane.
+Using Eq \ref{eq:ee18btech11044_3_6} calculate the value of $\frac{R_2}{R_1}$ for which poles lie on right hand of s-plane.
 
 \solution 
 
@@ -116,9 +123,10 @@ $\therefore$ For poles to lie on right hand side of s-plane
 
 
 \item
-Verify the above calculations using a Python code.
+Verify the above theory using a Python code.
 
 \solution
+
 \begin{lstlisting}
 codes/ee18btech11044/ee18btech11044_3_1.py
 \end{lstlisting}
@@ -131,67 +139,10 @@ codes/ee18btech11044/ee18btech11044_3_1.py
 \centering
 \includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_1.eps}
 \caption{}
+\label{fig:ee18btech11044_3_1}
 \end{figure}
 
-\item
-Verify the output of the above transfer using a python code
-
-\solution
-
-
-\begin{itemize}
-\item In the real life oscillator generates a sinusoidal input utilizing the thermal noise in the circuit.
-\item In the python simulation, oscillator requires an input to generate the output as there is no thermal noise in the simulation.
-\item Any input will produce the same sinusoidal output in the simulation as you can see output for both step input and impulse input is same(Amplitude might differ but frequency will be the same). 
-\item Please refer Fig{\ref{fig:ee18btech11044_3_4}} for the output of the transfer function for a step input.
-\item Please refer Fig{\ref{fig:ee18btech11044_3_5}} for the output of the transfer function for am impulse input.
-\item Code for generating step response
-\begin{lstlisting}
-codes/ee18btech11044/ee18btech11044_pyst.py
-\end{lstlisting}
-\item Code for generating impulse response
-\begin{lstlisting}
-codes/ee18btech11044/ee18btech11044_pyim.py
-\end{lstlisting}
-\end{itemize}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_4.eps}
-\caption{}
-\label{fig:ee18btech11044_3_4}
-\end{figure}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_5.eps}
-\caption{}
-\label{fig:ee18btech11044_3_5}
-\end{figure}
-
-\item Simulate the circuit shown in Fig \ref{fig:ee18btech11044_3_tikz_1} using spice simulators. Plot the output generated using python.
-
-\solution
-
-You can find the netlist for the simulated circuit here:
-
-\begin{lstlisting}
-spice/ee18btech11044/ee18btech11044.net
-\end{lstlisting}
-
-You can find the python script used to generate the output here:
-
-\begin{lstlisting}
-spice/ee18btech11044/ee18btech11044_spice.py
-\end{lstlisting}
-
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_2.eps}
-\caption{}
-\end{figure}
-
-\item Tabulate the values of Resistors and Capacitors you have chosen for the simulation.
+\item Choose appropriate values of Resistances and Capacitors to simulate the circuit.
 
 \solution
 
@@ -207,43 +158,322 @@ Where, according to Fig \ref{fig:ee18btech11044_3_tikz_1}
     R_p = R_s = R \\
     C_p = C_s = C
 \end{align}
- 
- \item Calculate the frequency of sinusoidal generated for the combination of R and C chosen using Eq \ref{eq:ee18btech11044_3_4}
- 
- \solution
- 
- Frequency generated is given by 
- 
- \begin{align}
-     \omega_{0} = \frac{1}{ R C} \\
-     \omega_{0} = 6250 rad/sec \\
-     f_{0} = 995.22Hz.
- \end{align}
- 
- \item Calculate the frequency of sinusoidal wave using plot generated from simulation.
+
+%Case-------------------------1
+
+\item Calculate the frequency of sinusoid generated for the values given in table \ref{table:ee18btech11044_t_1}.
+
+\solution
+
+\begin{itemize}
+\item Calculating poles of transfer function for $\frac{R_2}{R_1}$= 2.03 using a python script.
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_1.py
+\end{lstlisting}
+\item We get the poles as 93.75 + j 6249.2968 and 93.75 - j 6249.2968, which correspond to an exponentially increasing sinusoid of  frequency  995.11Hz. 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%Python simulation
+
+\item Substituting the values shown in table \ref{table:ee18btech11044_t_1} in the Eq \ref{eq:ee18btech11044_3_7}, Plot the impulse response and step response using a python code.
+
+\solution
+
+\begin{itemize}
+\item Refer Fig \ref{fig:ee18btech11044_3_2} for impulse response of transfer function.
+\item Code for generating impulse response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_2.py
+\end{lstlisting}
+\item Refer D=Fig \ref{fig:ee18btech11044_3_3} for step response of transfer function.
+\item Code for generating step response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_3.py
+\end{lstlisting}
+\item As expected from the poles we are getting an exponentially increasing sinusoid as both impulse response and step response.
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_2.eps}
+\caption{}
+\label{fig:ee18btech11044_3_2}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_3.eps}
+\caption{}
+\label{fig:ee18btech11044_3_3}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%Spice simulation
+
+\item Simulate the circuit shown in Fig \ref{fig:ee18btech11044_3_tikz_1} using spice simulators. Substitute the values shown in table \ref{table:ee18btech11044_t_1} and plot the output using a python script.
+
+\solution
+
+\begin{itemize}
+\item Refer Fig \ref{fig:ee18btech11044_3_4} for the spice simulation output.  
+\item You can find the netlist for the simulated circuit here:
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_3_1.net
+\end{lstlisting}
+\item You can find the python script used to generate the output here:
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_spice_3_1.py
+\end{lstlisting}
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_4.eps}
+\label{fig:ee18btech11044_3_4}
+\caption{}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%Frequency of spice simulation
+
+\item Calculate the frequency of sinusoidal wave using plot generated from simulation.
  
  \solution
  \begin{itemize}
-     \item Consider a part of plot generated from simulation shown in the Fig \ref{fig:ee18btech11044_3_plot_3}.
-     \item Calculating the Time-period of the sinusoidal wave generated using the two points marked in the Fig \ref{fig:ee18btech11044_3_plot_3}.
+     \item Consider a part of plot generated from simulation shown in the Fig \ref{fig:ee18btech11044_3_5}.
+     \item Calculating the Time-period of the sinusoidal wave generated using the two points marked in the Fig \ref{fig:ee18btech11044_3_5}.
      \begin{align}
          T_0 = 0.0856452 - 0.0846361 \\
          f_0 = 1/T_0 \\
          f_0 = 990.98Hz.
      \end{align}
      \item We get the frequencies calculated from the formulae and the plot to be approximately same.
-     \item Use this script to generate Fig \ref{fig:ee18btech11044_3_plot_3}
+     \item Use this script to generate Fig \ref{fig:ee18btech11044_3_5}
 \begin{lstlisting}
-spice/ee18btech11044/ee18btech11044_spice_2.py
+spice/ee18btech11044/ee18btech11044_spice_3_2.py
 \end{lstlisting}
  \end{itemize}
  
 
  
- \begin{figure}[!ht]
+\begin{figure}[!ht]
 \centering
-\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_3.eps}
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_5.eps}
 \caption{}
-\label{fig:ee18btech11044_3_plot_3}
+\label{fig:ee18btech11044_3_5}
 \end{figure}
+
+%Case------------------------------------------------2
+\item Calculate the poles of transfer function when the ratio $\frac{R_2}{R_1}$ is taken to be 2.
+
+\solution
+
+\begin{itemize}
+\item Calculating poles of transfer function for $\frac{R_2}{R_1}$= 2 using a python script.
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_4.py
+\end{lstlisting}
+\item We get the poles to be purely imaginery +6250j and -6250j, which correspond to a sinusoid of frequency  995.22Hz. 
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%python simulation
+\item Substituting the values shown in table \ref{table:ee18btech11044_t_1} in the Eq \ref{eq:ee18btech11044_3_7}, Consider the ratio of $\frac{R_2}{R_1•}$ = 2 and plot the impulse response and step response using a python code.
+
+\solution
+
+\begin{itemize}
+\item Refer Fig \ref{fig:ee18btech11044_3_6} for impulse response of transfer function.
+\item Code for generating impulse response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_5.py
+\end{lstlisting}
+\item Refer D=Fig \ref{fig:ee18btech11044_3_7} for step response of transfer function.
+\item Code for generating step response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_6.py
+\end{lstlisting}
+\item As expected from the poles we are getting pure sinusoid as both impulse response and step response.
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_6.eps}
+\caption{}
+\label{fig:ee18btech11044_3_6}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_7.eps}
+\caption{}
+\label{fig:ee18btech11044_3_7}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%spice simulation
+\item Simulate the circuit shown in Fig \ref{fig:ee18btech11044_3_tikz_1} using spice simulators. Consider the ratio of $\frac{R_2}{R_1•}$ = 2 and plot the output using a python script.
+
+\solution
+
+\begin{itemize}
+\item Refer Fig \ref{fig:ee18btech11044_3_8} for the spice simulation output.  
+\item You can find the netlist for the simulated circuit here:
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_3_2.net
+\end{lstlisting}
+\item You can find the python script used to generate the output here:
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_spice_3_3.py
+\end{lstlisting}
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_8.eps}
+\label{fig:ee18btech11044_3_8}
+\caption{}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%Frequency of spice simulation
+
+\item Calculate the frequency of sinusoidal wave using plot generated from simulationfor the case where $\frac{R_2}{R_1} =2$.
+ 
+ \solution
+ \begin{itemize}
+     \item Consider a part of plot generated from simulation shown in the Fig \ref{fig:ee18btech11044_3_9}.
+     \item Calculating the Time-period of the sinusoidal wave generated using the two points marked in the Fig \ref{fig:ee18btech11044_3_9}.
+     \begin{align}
+         T_0 = 0.00227823 - 0.00127016 \\
+         f_0 = 1/T_0 \\
+         f_0 = 991.9944Hz.
+     \end{align}
+     \item We get the frequencies calculated from the formulae and the plot to be approximately same.
+     \item Use this script to generate Fig \ref{fig:ee18btech11044_3_9}
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_spice_3_4.py
+\end{lstlisting}
+ \end{itemize}
+ 
+
+ 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_9.eps}
+\caption{}
+\label{fig:ee18btech11044_3_9}
+\end{figure}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%Case--------------3
+\item Calculate the poles of transfer function when the ratio $\frac{R_2}{R_1}$ is taken to be 9.
+
+\solution
+
+\begin{itemize}
+\item Calculating poles of transfer function for $\frac{R_2}{R_1}$= 9 using a python script.
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_7.py
+\end{lstlisting}
+\item We get the poles two real and distinct poles at 42838.13728906053  and  911.8627109394729, which correspond to an exponentially increasing function.  
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%python simulation
+\item Substituting the values shown in table \ref{table:ee18btech11044_t_1} in the Eq \ref{eq:ee18btech11044_3_7}. Consider the ratio of $\frac{R_2}{R_1•}$ = 9 and plot the impulse response and step response using a python code.
+
+\solution
+
+\begin{itemize}
+\item Refer Fig \ref{fig:ee18btech11044_3_10} for impulse response of transfer function.
+\item Code for generating impulse response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_8.py
+\end{lstlisting}
+\item Refer D=Fig \ref{fig:ee18btech11044_3_11} for step response of transfer function.
+\item Code for generating step response
+\begin{lstlisting}
+codes/ee18btech11044/ee18btech11044_3_9.py
+\end{lstlisting}
+\item As expected from the poles we are getting an exponentially increasing function as both impulse response and step response.
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_10.eps}
+\caption{}
+\label{fig:ee18btech11044_3_10}
+\end{figure}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_11.eps}
+\caption{}
+\label{fig:ee18btech11044_3_11}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%spice simulation
+\item Simulate the circuit shown in Fig \ref{fig:ee18btech11044_3_tikz_1} using spice simulators. Consider the ratio of $\frac{R_2}{R_1•}$ = 9 and plot the output using a python script.
+
+\solution
+
+\begin{itemize}
+\item Refer Fig \ref{fig:ee18btech11044_3_12} for the spice simulation output.  
+\item You can find the netlist for the simulated circuit here:
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_3_3.net
+\end{lstlisting}
+\item You can find the python script used to generate the output here:
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_spice_3_5.py
+\end{lstlisting}
+\end{itemize}
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_12.eps}
+\label{fig:ee18btech11044_3_12}
+\caption{}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%Frequency of spice simulation
+
+\item Calculate the frequency of sinusoidal wave using plot generated from simulationfor the case where $\frac{R_2}{R_1} = 9$.
+ 
+ \solution
+ \begin{itemize}
+     \item Consider a part of plot generated from simulation shown in the Fig \ref{fig:ee18btech11044_3_13}.
+     \item Calculating the Time-period of the sinusoidal wave generated using the two points marked in the Fig \ref{fig:ee18btech11044_3_13}.
+     \begin{align}
+         T_0 = 0.00453629 - 0.00270161 \\
+         f_0 = 1/T_0 \\
+         f_0 = 545.054Hz.
+     \end{align}
+     \item We get the frequencies calculated from the formulae and the plot to be approximately same.
+     \item Use this script to generate Fig \ref{fig:ee18btech11044_3_13}
+\begin{lstlisting}
+spice/ee18btech11044/ee18btech11044_spice_3_6.py
+\end{lstlisting}
+\item In this case because of the saturation voltage in op-amp we are getting a curve similar to square wave.
+ \end{itemize}
+ 
+
+ 
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_13.eps}
+\caption{}
+\label{fig:ee18btech11044_3_13}
+\end{figure}
+
+\item Describe the output depending upon the nature of poles.
+
+\solution 
+
+\begin{itemize}
+\item For purely imaginery poles, we expect a sinusoidal output (As in the case $\frac{R_2}{R_1}$ = 2).
+\item For complex conjugate poles, we expect an exponentially increasing sinusoid as the output.(As in the case $2 < \frac{R_2}{R_1} < 4$).
+\item For real and distinct poles, we expect an exponential  output.(As in the case $\frac{R_2}{R_1} > 4$).
+\item As you can observe behaviour of output generated by python scripts can be explained from the location of poles.
+\item In the case of spice simulation, the output is always sinusoidal irrespective of location of poles.
+\item Only in the case of marginal stability the output of ngspice seems to be valid.  
+
+\end{itemize}
+
 \end{enumerate}
