@@ -35,7 +35,7 @@ plt.plot(0.0133468,11.9143,'o')
 plt.title("Step system response -- R2/R1 = 2 -- f=991.965Hz")
 
 #if using termux
-#plt.savefig('./figs/ee18btech11044/ee18btech11044_3_7.pdf')
-#plt.savefig('./figs/ee18btech11044/ee18btech11044_3_7.eps')
-#subprocess.run(shlex.split("termux-open ./figs/ee18btech11044_3_7.pdf"))
-plt.show()
+plt.savefig('./figs/ee18btech11044/ee18btech11044_3_7.pdf')
+plt.savefig('./figs/ee18btech11044/ee18btech11044_3_7.eps')
+subprocess.run(shlex.split("termux-open ./figs/ee18btech11044_3_7.pdf"))
+#plt.show()
