@@ -18,7 +18,7 @@
 
 \solution
 \begin{itemize}
- Comparring Fig \ref{fig:ee18btech11044_3_tikz_1} and Fig \ref{fig:ee18btech11044_3_tikz_2}, we get
+ \item Comparring Fig \ref{fig:ee18btech11044_3_tikz_1} and Fig \ref{fig:ee18btech11044_3_tikz_2}, we get
 \begin{align}
 G = 1+\frac{R_2}{R_1} \label{eq:ee18btech11044_3_1}\\
 H = \frac{Z_p}{Z_p + Z_s}  \label{eq:ee18btech11044_3_2}
@@ -45,7 +45,7 @@ where,
 
 \solution
 \begin{align}
-T(s) = \frac{(1+\frac{R_2}{R_1}) R^2C^2s^2+3RCs+1 }{R^C^2s^2+(2-\frac{R_2}{R_1})RCs+1} \label{eq:ee18btech11044_3_7}
+T(s) = \frac{(1+\frac{R_2}{R_1}) R^{2}C^{2}s^{2}+3RCs+1 }{R^{2}C^{2}s^{2}+(2-\frac{R_2}{R_1})RCs+1} \label{eq:ee18btech11044_3_7}
 \end{align}
 
 
@@ -308,6 +308,13 @@ codes/ee18btech11044/ee18btech11044_3_6.py
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%spice simulation
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_8.eps}
+\label{fig:ee18btech11044_3_8}
+\caption{}
+\end{figure}
+
 \item Simulate the circuit shown in Fig \ref{fig:ee18btech11044_3_tikz_1} using spice simulators. Consider the ratio of $\frac{R_2}{R_1•}$ = 2 and plot the output using a python script.
 
 \solution
@@ -324,12 +331,7 @@ spice/ee18btech11044/ee18btech11044_spice_3_3.py
 \end{lstlisting}
 \end{itemize}
 
-\begin{figure}[!ht]
-\centering
-\includegraphics[width=\columnwidth]{./figs/ee18btech11044/ee18btech11044_3_8.eps}
-\label{fig:ee18btech11044_3_8}
-\caption{}
-\end{figure}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%Frequency of spice simulation
 
